@@ -1,51 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruct_one.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guantino <guantino@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/08 17:19:14 by guantino          #+#    #+#             */
-/*   Updated: 2026/01/09 14:15:58 by guantino         ###   ########.fr       */
+/*   Created: 2025/11/13 11:27:32 by guantino          #+#    #+#             */
+/*   Updated: 2025/11/13 11:31:25 by guantino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_printf.h"
 
-#include "pushswap.h"
-
-void	sa(t_stack *a)
+int	ft_putnbr(int num)
 {
-	t_stack *aux;
+	size_t	len;
 
-	if (!a || !a->next)
-		return ;
-	aux = a;
-	a = a->next;
-	a->next = aux;
+	len = 0;
+	if (num == -2147483648)
+		return (ft_putstr("-2147483648"));
+	if (num == 0)
+		return (ft_putchar('0'));
+	if (num < 0)
+	{
+		num *= (-1);
+		len += ft_putchar('-');
+	}
+	if (num >= 10)
+		len += ft_putnbr(num / 10);
+	len += ft_putchar((num % 10) + '0');
+	return (len);
 }
-
-void	sb(t_stack *b)
-{
-	t_stack *aux;
-
-	if (!b || !b->next)
-		return ;
-	aux = b;
-	b = b->next;
-	b->next = aux;
-}
-/*
-void	ss(t_stack *a, t_stack *b)
-{
-
-}
-
-void	pa(t_stack *a, t_stack *b)
-{
-
-}
-
-void	pb(t_stack *a, t_stack *b)
-{
-
-}
-*/

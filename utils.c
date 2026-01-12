@@ -1,51 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruct_one.c                                     :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guantino <guantino@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/08 17:19:14 by guantino          #+#    #+#             */
-/*   Updated: 2026/01/09 14:15:58 by guantino         ###   ########.fr       */
+/*   Created: 2026/01/12 12:17:18 by guantino          #+#    #+#             */
+/*   Updated: 2026/01/12 12:19:26 by guantino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "pushswap.h"
 
-void	sa(t_stack *a)
+t_stack	*ft_lstnew(int num)
 {
-	t_stack *aux;
+	t_stack	*new;
 
-	if (!a || !a->next)
+	new = malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new->num = num;
+	new->next = NULL;
+	return (new);
+}
+
+void	ft_lstadd_front(t_stack **lst, t_stack *new)
+{
+	if (!lst || !new)
 		return ;
-	aux = a;
-	a = a->next;
-	a->next = aux;
-}
-
-void	sb(t_stack *b)
-{
-	t_stack *aux;
-
-	if (!b || !b->next)
+	if (*lst == NULL)
+	{
+		*lst = new;
 		return ;
-	aux = b;
-	b = b->next;
-	b->next = aux;
+	}
+	new->next = *lst;
+	*lst = new;
 }
-/*
-void	ss(t_stack *a, t_stack *b)
-{
-
-}
-
-void	pa(t_stack *a, t_stack *b)
-{
-
-}
-
-void	pb(t_stack *a, t_stack *b)
-{
-
-}
-*/

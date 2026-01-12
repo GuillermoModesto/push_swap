@@ -1,51 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruct_one.c                                     :+:      :+:    :+:   */
+/*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guantino <guantino@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/08 17:19:14 by guantino          #+#    #+#             */
-/*   Updated: 2026/01/09 14:15:58 by guantino         ###   ########.fr       */
+/*   Created: 2025/11/13 12:20:44 by guantino          #+#    #+#             */
+/*   Updated: 2025/11/13 12:20:47 by guantino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "ft_printf.h"
 
-void	sa(t_stack *a)
+int	ft_putunbr(unsigned int num)
 {
-	t_stack *aux;
+	size_t	len;
 
-	if (!a || !a->next)
-		return ;
-	aux = a;
-	a = a->next;
-	a->next = aux;
+	len = 0;
+	if (num == 0)
+		return (ft_putchar('0'));
+	if (num >= 10)
+		len += ft_putnbr(num / 10);
+	len += ft_putchar((num % 10) + '0');
+	return (len);
 }
-
-void	sb(t_stack *b)
-{
-	t_stack *aux;
-
-	if (!b || !b->next)
-		return ;
-	aux = b;
-	b = b->next;
-	b->next = aux;
-}
-/*
-void	ss(t_stack *a, t_stack *b)
-{
-
-}
-
-void	pa(t_stack *a, t_stack *b)
-{
-
-}
-
-void	pb(t_stack *a, t_stack *b)
-{
-
-}
-*/

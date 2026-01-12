@@ -1,51 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruct_one.c                                     :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guantino <guantino@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/08 17:19:14 by guantino          #+#    #+#             */
-/*   Updated: 2026/01/09 14:15:58 by guantino         ###   ########.fr       */
+/*   Created: 2025/11/12 16:02:07 by guantino          #+#    #+#             */
+/*   Updated: 2025/11/12 16:02:36 by guantino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-#include "pushswap.h"
-
-void	sa(t_stack *a)
+int	ft_putchar(char c)
 {
-	t_stack *aux;
-
-	if (!a || !a->next)
-		return ;
-	aux = a;
-	a = a->next;
-	a->next = aux;
+	write(1, &c, 1);
+	return (1);
 }
-
-void	sb(t_stack *b)
-{
-	t_stack *aux;
-
-	if (!b || !b->next)
-		return ;
-	aux = b;
-	b = b->next;
-	b->next = aux;
-}
-/*
-void	ss(t_stack *a, t_stack *b)
-{
-
-}
-
-void	pa(t_stack *a, t_stack *b)
-{
-
-}
-
-void	pb(t_stack *a, t_stack *b)
-{
-
-}
-*/

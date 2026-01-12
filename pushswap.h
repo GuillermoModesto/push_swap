@@ -6,7 +6,7 @@
 /*   By: guantino <guantino@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 17:00:45 by guantino          #+#    #+#             */
-/*   Updated: 2026/01/08 17:18:39 by guantino         ###   ########.fr       */
+/*   Updated: 2026/01/09 14:51:31 by guantino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,31 @@
 typedef struct s_stack
 {
 	int	num;
-	int	*struct s_stack;
-	int	*struct s_stack;
+	struct s_stack	*next;
+	struct s_stack	*prev;
 }	t_stack;
 
-void	sa(t_stack a, t_stack b);
-void	sb(t_stack a, t_stack b);
-void	ss(t_stack a, t_stack b);
-void	pa(t_stack a, t_stack b);
-void	pb(t_stack a, t_stack b);
-void	ra(t_stack a, t_stack b);
-void	rb(t_stack a, t_stack b);
-void	rr(t_stack a, t_stack b);
-void	rra(t_stack a, t_stack b);
-void	rrb(t_stack a, t_stack b);
-void	rrr(t_stack a, t_stack b);
+int	ft_printf(const char *str, ...);
+int	ft_putchar(char c);
+int	ft_putstr(char *s);
+int	ft_puthexnbr(unsigned long num, int cap);
+int	ft_putnbr(int num);
+int	ft_putunbr(unsigned int num);
+int	ft_putvoid(void *ptr);
+
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
+void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
+void	ra(t_stack *a, t_stack *b);
+void	rb(t_stack *a, t_stack *b);
+void	rr(t_stack *a, t_stack *b);
+void	rra(t_stack *a, t_stack *b);
+void	rrb(t_stack *a, t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
+
+t_stack	*ft_lstnew(int num);
+void	ft_lstadd_front(t_stack **lst, t_stack *new);
 
 #endif
