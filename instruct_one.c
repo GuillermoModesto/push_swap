@@ -12,26 +12,32 @@
 
 #include "pushswap.h"
 
-void	sa(t_stack *a)
+void	sa(t_stack **a)
 {
-	t_stack *aux;
+	t_stack *first;
+	t_stack *second;
 
-	if (!a || !a->next)
+	if (!a || !(*a)->next || !(*a)->next)
 		return ;
-	aux = a;
-	a = a->next;
-	a->next = aux;
+	first = *a;
+	second = (*a)->next;
+	first->next = second->next;
+	second->next = first;
+	*a = second;
 }
 
-void	sb(t_stack *b)
+void	sb(t_stack **b)
 {
-	t_stack *aux;
+	t_stack *first;
+	t_stack *second;
 
-	if (!b || !b->next)
+	if (!b || !(*b)->next || !(*b)->next)
 		return ;
-	aux = b;
-	b = b->next;
-	b->next = aux;
+	first = *b;
+	second = (*b)->next;
+	first->next = second->next;
+	second->next = first;
+	*b = second;
 }
 /*
 void	ss(t_stack *a, t_stack *b)

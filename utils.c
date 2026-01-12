@@ -35,3 +35,12 @@ void	ft_lstadd_front(t_stack **lst, t_stack *new)
 	new->next = *lst;
 	*lst = new;
 }
+
+void	print_stack(t_stack *s)
+{
+	while (s)
+	{
+		ft_printf("%d ", s->num);
+		s = s->next;
+	}
+}

@@ -29,9 +29,10 @@ int	ft_puthexnbr(unsigned long num, int cap);
 int	ft_putnbr(int num);
 int	ft_putunbr(unsigned int num);
 int	ft_putvoid(void *ptr);
+void	print_stack(t_stack *s);
 
-void	sa(t_stack *a);
-void	sb(t_stack *b);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
 void	ss(t_stack *a, t_stack *b);
 void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
