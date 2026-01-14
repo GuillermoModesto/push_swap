@@ -17,7 +17,7 @@ void	sa(t_stack **a)
 	t_stack *first;
 	t_stack *second;
 
-	if (!a || !(*a)->next || !(*a)->next)
+	if (!a || !(*a) || !(*a)->next)
 		return ;
 	first = *a;
 	second = (*a)->next;
@@ -31,7 +31,7 @@ void	sb(t_stack **b)
 	t_stack *first;
 	t_stack *second;
 
-	if (!b || !(*b)->next || !(*b)->next)
+	if (!b || !(*b) || !(*b)->next)
 		return ;
 	first = *b;
 	second = (*b)->next;
@@ -39,19 +39,31 @@ void	sb(t_stack **b)
 	second->next = first;
 	*b = second;
 }
+
+void	ss(t_stack **a, t_stack **b)
+{
+	sa(a);
+	sb(b);
+}
+
+void	pa(t_stack **a, t_stack **b)
+{
+	/*
+	int	aux;
+	
+	aux = (*a)->num;
+	(*a)->num = (*b)->num;
+	(*b)->num = aux;
+	*/
+	if (!b || !(*b))
+		return ;
+	ft_lstadd_front(a, ft_lstnew((*b)->num));
+}
 /*
-void	ss(t_stack *a, t_stack *b)
+void	pb(t_stack **a, t_stack **b)
 {
-
-}
-
-void	pa(t_stack *a, t_stack *b)
-{
-
-}
-
-void	pb(t_stack *a, t_stack *b)
-{
-
+	if (!a || !(*a))
+		return ;
+	
 }
 */

@@ -36,11 +36,33 @@ void	ft_lstadd_front(t_stack **lst, t_stack *new)
 	*lst = new;
 }
 
-void	print_stack(t_stack *s)
+void	print_stacks(t_stack *a, t_stack *b)
 {
-	while (s)
+	ft_printf("stack a:  |  stack b:\n");
+	ft_printf("--------  |  --------\n");
+	while (a && b)
 	{
-		ft_printf("%d ", s->num);
-		s = s->next;
+		ft_printf("   %d      |     %d     \n", a->num, b->num);
+		a = a->next;
+		b = b->next;
 	}
+	while (a)
+	{
+		ft_printf("   %d      |     -     \n", a->num);
+		a = a->next;
+	}
+	while (b)
+	{
+		ft_printf("   -      |     %d     \n", b->num);
+		a = a->next;
+	}
+	/*
+	ft_printf("");
+	ft_printf("|------|\n");
+	while (a)
+	{
+		ft_printf("%d\n--------", b->num);
+		b = b->next;
+	}
+	*/
 }
