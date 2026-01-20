@@ -22,6 +22,8 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }	t_stack;
 
+char	**ft_split(char const *s, char c);
+
 int	ft_printf(const char *str, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
