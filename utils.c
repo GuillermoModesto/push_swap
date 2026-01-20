@@ -9,7 +9,7 @@
 /*   Updated: 2026/01/12 12:19:26 by guantino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "pushswap.h"
+#include "push_swap.h"
 
 t_stack	*ft_lstnew(int num)
 {

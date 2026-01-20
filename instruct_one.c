@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "push_swap.h"
 // (swap first two elements of a)
 void	sa(t_stack **a)
 {
@@ -48,24 +48,25 @@ void	ss(t_stack **a, t_stack **b)
 // (take first of b and put it on top of a)
 void	pa(t_stack **a, t_stack **b)
 {
-	/*
-	int	aux;
+	t_stack	*aux;
 	
-	aux = (*a)->num;
-	(*a)->num = (*b)->num;
-	(*b)->num = aux;
-	*/
+	aux = *b;
 	if (!b || !(*b))
 		return ;
-	ft_lstadd_front(a, ft_lstnew((*b)->num));
-	
+	*b = (*b)->next;
+	aux->next = *a;
+	*a = aux;
 }
 // (take first of a and put it on top of b)
-/*
 void	pb(t_stack **a, t_stack **b)
 {
+	t_stack	*aux;
+	
+	aux = *a;
 	if (!a || !(*a))
 		return ;
-	
+	*a = (*a)->next;
+	aux->next = *b;
+	*b = aux;
 }
-*/
+

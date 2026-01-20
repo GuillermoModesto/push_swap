@@ -1,4 +1,4 @@
-#include "pushswap.h"
+#include "push_swap.h"
 
 int main()
 {
@@ -6,6 +6,7 @@ int main()
 	ft_lstadd_front(&stack_a, ft_lstnew(3));
 	ft_lstadd_front(&stack_a, ft_lstnew(5));
 	ft_lstadd_front(&stack_a, ft_lstnew(7));
+	ft_lstadd_front(&stack_a, ft_lstnew(9));
 	
 	t_stack *stack_b = ft_lstnew(2);
 	ft_lstadd_front(&stack_b, ft_lstnew(4));
@@ -36,10 +37,10 @@ int main()
 	ft_printf(" -> pa:\n");
 	pa(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
-	/*
+	
 	// pb (take first of a and put it on top of b)
 	ft_printf(" -> pb:\n");
 	pb(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
-	*/
+	
 }
