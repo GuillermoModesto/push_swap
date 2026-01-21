@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: guantino <guantino@student.42malaga.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/21 17:31:33 by guantino          #+#    #+#             */
+/*   Updated: 2026/01/21 17:34:08 by guantino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	int	i;
-	t_stack *stack_a;
-	t_stack *stack_b;
-	
+	int		i;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc < 2)
@@ -53,6 +64,5 @@ int main(int argc, char **argv)
 	ft_printf(" -> pb:\n");
 	pb(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
-	*/
-	
+	*/	
 }
