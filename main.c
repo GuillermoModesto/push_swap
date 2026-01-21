@@ -28,13 +28,13 @@ int	main(int argc, char **argv)
 	}
 	i = 0;
 	if (!parse_and_check(ft_split(argv[1], ' '), &stack_a))
-		display_error();
-	else
 	{
-		print_stacks(stack_a, stack_b);
-		free_all(stack_a, stack_b);
+		display_error();
+		return (3);
 	}
-	/*
+	// for testing only
+	parse_and_check(ft_split(argv[1], ' '), &stack_b);
+	
 	ft_printf(" -> Original:\n");
 	print_stacks(stack_a, stack_b);
 	ft_printf("\n");
@@ -64,5 +64,5 @@ int	main(int argc, char **argv)
 	ft_printf(" -> pb:\n");
 	pb(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
-	*/	
+		
 }
