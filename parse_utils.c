@@ -73,12 +73,21 @@ static int	check_numbers(char **input)
 
 static int	check_duplicates (t_stack *a)
 {
-	//auxiliar para bucle interno
-	while(a)
+	t_stack	*current;
+	t_stack	*compare;
+	
+	current = a;
+	compare = a->next;
+	while(current)
 	{
-		
-		ft_printf("%d", a->num);
-		a = a->next;
+		compare = current->next;
+		while(compare)
+		{
+			if (current->num == compare->num)
+				return (0);
+			compare = compare->next;
+		}
+		current = current->next;
 	}
 	return (1);
 }
@@ -99,9 +108,11 @@ int	parse_and_check(char **input, t_stack **a)
 		ft_lstadd_back(a, ft_lstnew(aux));
 		i++;
 	}
-	if (!error)
+	if (!error || !check_duplicates(*a))
+	{
+		free_all(*a, NULL);
 		return (0);
-	if (!check_duplicates(*a))
-		return (0);
+	}
+
 	return (1);
 }

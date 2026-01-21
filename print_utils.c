@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_utils.c                                     :+:      :+:    :+:   */
+/*   print_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guantino <guantino@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -31,15 +31,6 @@ void	print_stacks(t_stack *a, t_stack *b)
 		ft_printf("   -      |     %d     \n", b->num);
 		a = a->next;
 	}
-	/*
-	ft_printf("");
-	ft_printf("|------|\n");
-	while (a)
-	{
-		ft_printf("%d\n--------", b->num);
-		b = b->next;
-	}
-	*/
 }
 
 void	display_error()

@@ -33,6 +33,7 @@ int	ft_putvoid(void *ptr);
 void	print_stacks(t_stack *a, t_stack *b);
 void	display_error();
 int	parse_and_check(char **input, t_stack **a);
+void	free_all(t_stack *a, t_stack *b);
 
 void	sa(t_stack **a);
 void	sb(t_stack **b);
@@ -49,6 +50,5 @@ void	rrr(t_stack **a, t_stack **b);
 t_stack	*ft_lstnew(int num);
 t_stack	*ft_lstlast(t_stack *lst);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
-int	ft_lstsize(t_stack *lst);
 
 #endif

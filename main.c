@@ -11,10 +11,17 @@ int main(int argc, char **argv)
 	stack_b = NULL;
 	if (argc < 2)
 		return (1);
+	if (!argv[1][0])
+	{
+		display_error();
+		return (2);
+	}
 	i = 0;
 	input = ft_split(argv[1], ' ');
 	if (!parse_and_check(input, &stack_a))
 		display_error();
+	else
+		free_all(stack_a, stack_b);
 	/*
 	t_stack *stack_a = ft_lstnew(1);
 	ft_lstadd_front(&stack_a, ft_lstnew(3));
