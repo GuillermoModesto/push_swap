@@ -4,19 +4,16 @@ int main(int argc, char **argv)
 {
 	char	**input;
 	int	i;
+	t_stack *stack_a;
+	t_stack *stack_b;
 	
+	stack_a = NULL;
+	stack_b = NULL;
 	if (argc < 2)
 		return (1);
 	i = 0;
 	input = ft_split(argv[1], ' ');
-	
-	while(input[i])
-	{
-		ft_printf("%s ", input[i]);
-		i++;
-	}
-	
-	if (!check_numbers(input))
+	if (!parse_and_check(input, &stack_a))
 		display_error();
 	/*
 	t_stack *stack_a = ft_lstnew(1);

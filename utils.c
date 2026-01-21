@@ -23,8 +23,20 @@ t_stack	*ft_lstnew(int num)
 	return (new);
 }
 
-void	ft_lstadd_front(t_stack **lst, t_stack *new)
+
+t_stack	*ft_lstlast(t_stack *lst)
 {
+	if (!lst)
+		return (NULL);
+	while (lst -> next)
+		lst = lst -> next;
+	return (lst);
+}
+
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
+{
+	t_stack	*ptr;
+
 	if (!lst || !new)
 		return ;
 	if (*lst == NULL)
@@ -32,55 +44,6 @@ void	ft_lstadd_front(t_stack **lst, t_stack *new)
 		*lst = new;
 		return ;
 	}
-	new->next = *lst;
-	*lst = new;
-}
-
-int	ft_lstsize(t_stack *lst)
-{
-	int	i;
-
-	i = 0;
-	while (lst)
-	{
-		lst = lst -> next;
-		i++;
-	}
-	return (i);
-}
-
-void	print_stacks(t_stack *a, t_stack *b)
-{
-	ft_printf("stack a:  |  stack b:\n");
-	ft_printf("--------  |  --------\n");
-	while (a && b)
-	{
-		ft_printf("   %d      |     %d     \n", a->num, b->num);
-		a = a->next;
-		b = b->next;
-	}
-	while (a)
-	{
-		ft_printf("   %d      |     -     \n", a->num);
-		a = a->next;
-	}
-	while (b)
-	{
-		ft_printf("   -      |     %d     \n", b->num);
-		a = a->next;
-	}
-	/*
-	ft_printf("");
-	ft_printf("|------|\n");
-	while (a)
-	{
-		ft_printf("%d\n--------", b->num);
-		b = b->next;
-	}
-	*/
-}
-
-void	display_error()
-{
-	write(2, "Error\n", 6);
+	ptr = ft_lstlast(*lst);
+	ptr->next = new;
 }

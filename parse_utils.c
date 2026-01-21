@@ -15,15 +15,51 @@ static int	is_number(char *s)
 {
 	int	i;
 	
+	if (!s || !*s)
+		return (0);
 	i = 0;
-	while (s[i] && s[i] >= '0' && s[i] <= '9')
+	if (s[i] == '+' || s[i] == '-')
+		i++;
+	if (!s[i])
+		return (0);
+	while (s[i] &&
+		((s[i] >= '0' && s[i] <= '9') || s[i] == '-' || s[i] == '+'))
 		i++;
 	if (!s[i])
 		return (1);
 	return (0);
 }
 
-int	check_numbers(char **input)
+static int	ft_atoi_with_check(char *nptr, int *res)
+{
+	int	i;
+	int	sign;
+	long	num;
+
+	i = 0;
+	sign = 1;
+	num = 0;
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		num = num * 10 + (nptr[i] - '0');
+		if ((sign == 1 && num > 2147483647) 
+			|| (sign == -1 && num > 2147483648))
+			return (0);
+		i++;
+	}
+	*res = ((int)num * sign);
+	return (1);
+}
+
+static int	check_numbers(char **input)
 {
 	int	i;
 	int	is_num;
@@ -34,8 +70,38 @@ int	check_numbers(char **input)
 		i++;
 	return (is_num);
 }
-/*
-int	check_errors(char **input)
+
+static int	check_duplicates (t_stack *a)
 {
-	if (!check_for_numbers(input) || 
-}*/
+	//auxiliar para bucle interno
+	while(a)
+	{
+		
+		ft_printf("%d", a->num);
+		a = a->next;
+	}
+	return (1);
+}
+
+int	parse_and_check(char **input, t_stack **a)
+{
+	int	i;
+	int	aux;
+	int	error;
+	
+	aux = 0;
+	i = 0;
+	error = 1;
+	if (!check_numbers(input))
+		return (0);
+	while(input[i] && (error = ft_atoi_with_check(input[i], &aux)))
+	{
+		ft_lstadd_back(a, ft_lstnew(aux));
+		i++;
+	}
+	if (!error)
+		return (0);
+	if (!check_duplicates(*a))
+		return (0);
+	return (1);
+}
