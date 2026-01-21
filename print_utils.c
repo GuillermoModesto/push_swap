@@ -6,7 +6,7 @@
 /*   By: guantino <guantino@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 13:32:32 by guantino          #+#    #+#             */
-/*   Updated: 2026/01/21 13:33:04 by guantino         ###   ########.fr       */
+/*   Updated: 2026/01/21 17:50:45 by guantino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -33,7 +33,7 @@ void	print_stacks(t_stack *a, t_stack *b)
 	}
 }
 
-void	display_error()
+void	display_error(void)
 {
 	write(2, "Error\n", 6);
 }
