@@ -6,7 +6,7 @@
 /*   By: guantino <guantino@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:17:18 by guantino          #+#    #+#             */
-/*   Updated: 2026/01/12 12:19:26 by guantino         ###   ########.fr       */
+/*   Updated: 2026/01/21 17:29:56 by guantino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -22,7 +22,6 @@ t_stack	*ft_lstnew(int num)
 	new->next = NULL;
 	return (new);
 }
-
 
 t_stack	*ft_lstlast(t_stack *lst)
 {
