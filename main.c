@@ -2,7 +2,6 @@
 
 int main(int argc, char **argv)
 {
-	char	**input;
 	int	i;
 	t_stack *stack_a;
 	t_stack *stack_b;
@@ -17,23 +16,14 @@ int main(int argc, char **argv)
 		return (2);
 	}
 	i = 0;
-	input = ft_split(argv[1], ' ');
-	if (!parse_and_check(input, &stack_a))
+	if (!parse_and_check(ft_split(argv[1], ' '), &stack_a))
 		display_error();
 	else
+	{
+		print_stacks(stack_a, stack_b);
 		free_all(stack_a, stack_b);
+	}
 	/*
-	t_stack *stack_a = ft_lstnew(1);
-	ft_lstadd_front(&stack_a, ft_lstnew(3));
-	ft_lstadd_front(&stack_a, ft_lstnew(5));
-	ft_lstadd_front(&stack_a, ft_lstnew(7));
-	ft_lstadd_front(&stack_a, ft_lstnew(9));
-	
-	t_stack *stack_b = ft_lstnew(2);
-	ft_lstadd_front(&stack_b, ft_lstnew(4));
-	ft_lstadd_front(&stack_b, ft_lstnew(6));
-	ft_lstadd_front(&stack_b, ft_lstnew(8));
-	
 	ft_printf(" -> Original:\n");
 	print_stacks(stack_a, stack_b);
 	ft_printf("\n");
