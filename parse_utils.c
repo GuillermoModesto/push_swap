@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruct_two.c                                     :+:      :+:    :+:   */
+/*   parse_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guantino <guantino@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/08 17:19:40 by guantino          #+#    #+#             */
-/*   Updated: 2026/01/09 14:09:30 by guantino         ###   ########.fr       */
+/*   Created: 2026/01/21 12:20:20 by guantino          #+#    #+#             */
+/*   Updated: 2026/01/21 12:20:23 by guantino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
-// (shift up all elements of stack a by 1)
-void	ra(t_stack *a, t_stack *b)
+
+static int	is_number(char *s)
 {
+	int	i;
 	
+	i = 0;
+	while (s[i] && s[i] >= '0' && s[i] <= '9')
+		i++;
+	if (!s[i])
+		return (1);
+	return (0);
 }
-// (shift up all elements of stack b by 1)
-void	rb(t_stack *a, t_stack *b)
-{
 
-}
-// (do sa and sb)
-void	rr(t_stack *a, t_stack *b)
+int	check_numbers(char **input)
 {
-
+	int	i;
+	int	is_num;
+	
+	i = 0;
+	is_num = 1;
+	while(input[i] && (is_num = is_number(input[i])))
+		i++;
+	return (is_num);
 }
+/*
+int	check_errors(char **input)
+{
+	if (!check_for_numbers(input) || 
+}*/

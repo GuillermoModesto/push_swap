@@ -36,6 +36,19 @@ void	ft_lstadd_front(t_stack **lst, t_stack *new)
 	*lst = new;
 }
 
+int	ft_lstsize(t_stack *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst -> next;
+		i++;
+	}
+	return (i);
+}
+
 void	print_stacks(t_stack *a, t_stack *b)
 {
 	ft_printf("stack a:  |  stack b:\n");
@@ -65,4 +78,9 @@ void	print_stacks(t_stack *a, t_stack *b)
 		b = b->next;
 	}
 	*/
+}
+
+void	display_error()
+{
+	write(2, "Error\n", 6);
 }

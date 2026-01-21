@@ -1,6 +1,6 @@
 SRCS	= ft_printf.c ft_putchar.c ft_putstr.c ft_puthexnbr.c \
 		  ft_putnbr.c ft_putunbr.c ft_putvoid.c instruct_one.c \
-		  utils.c test_main.c
+		  utils.c test_main.c ft_split.c parse_utils.c
 
 OBJS	= $(SRCS:.c=.o)
 

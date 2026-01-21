@@ -1,7 +1,24 @@
 #include "push_swap.h"
 
-int main()
+int main(int argc, char **argv)
 {
+	char	**input;
+	int	i;
+	
+	if (argc < 2)
+		return (1);
+	i = 0;
+	input = ft_split(argv[1], ' ');
+	
+	while(input[i])
+	{
+		ft_printf("%s ", input[i]);
+		i++;
+	}
+	
+	if (!check_numbers(input))
+		display_error();
+	/*
 	t_stack *stack_a = ft_lstnew(1);
 	ft_lstadd_front(&stack_a, ft_lstnew(3));
 	ft_lstadd_front(&stack_a, ft_lstnew(5));
@@ -42,5 +59,6 @@ int main()
 	ft_printf(" -> pb:\n");
 	pb(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
+	*/
 	
 }

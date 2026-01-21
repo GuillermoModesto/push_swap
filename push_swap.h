@@ -19,7 +19,6 @@ typedef struct s_stack
 {
 	int	num;
 	struct s_stack	*next;
-	struct s_stack	*prev;
 }	t_stack;
 
 char	**ft_split(char const *s, char c);
@@ -32,6 +31,8 @@ int	ft_putnbr(int num);
 int	ft_putunbr(unsigned int num);
 int	ft_putvoid(void *ptr);
 void	print_stacks(t_stack *a, t_stack *b);
+void	display_error();
+int	check_numbers(char **input);
 
 void	sa(t_stack **a);
 void	sb(t_stack **b);
@@ -47,5 +48,6 @@ void	rrr(t_stack **a, t_stack **b);
 
 t_stack	*ft_lstnew(int num);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
+int	ft_lstsize(t_stack *lst);
 
 #endif
