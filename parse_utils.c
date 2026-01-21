@@ -6,7 +6,7 @@
 /*   By: guantino <guantino@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 12:20:20 by guantino          #+#    #+#             */
-/*   Updated: 2026/01/21 12:20:23 by guantino         ###   ########.fr       */
+/*   Updated: 2026/01/21 17:45:49 by guantino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -14,7 +14,7 @@
 static int	is_number(char *s)
 {
 	int	i;
-	
+
 	if (!s || !*s)
 		return (0);
 	i = 0;
@@ -22,8 +22,7 @@ static int	is_number(char *s)
 		i++;
 	if (!s[i])
 		return (0);
-	while (s[i] &&
-		((s[i] >= '0' && s[i] <= '9') || s[i] == '-' || s[i] == '+'))
+	while (s[i] && ((s[i] >= '0' && s[i] <= '9') || s[i] == '-' || s[i] == '+'))
 		i++;
 	if (!s[i])
 		return (1);
@@ -32,8 +31,8 @@ static int	is_number(char *s)
 
 static int	ft_atoi_with_check(char *nptr, int *res)
 {
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
 	long	num;
 
 	i = 0;
@@ -50,8 +49,7 @@ static int	ft_atoi_with_check(char *nptr, int *res)
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		num = num * 10 + (nptr[i] - '0');
-		if ((sign == 1 && num > 2147483647) 
-			|| (sign == -1 && num > 2147483648))
+		if ((sign == 1 && num > 2147483647) || (sign == -1 && num > 2147483648))
 			return (0);
 		i++;
 	}
@@ -63,25 +61,28 @@ static int	check_numbers(char **input)
 {
 	int	i;
 	int	is_num;
-	
+
 	i = 0;
-	is_num = 1;
-	while(input[i] && (is_num = is_number(input[i])))
+	is_num = is_number(input[i]);
+	while (input[i] && is_num)
+	{
+		is_num = is_number(input[i]);
 		i++;
+	}
 	return (is_num);
 }
 
-static int	check_duplicates (t_stack *a)
+static int	check_duplicates(t_stack *a)
 {
 	t_stack	*current;
 	t_stack	*compare;
-	
+
 	current = a;
 	compare = a->next;
-	while(current)
+	while (current)
 	{
 		compare = current->next;
-		while(compare)
+		while (compare)
 		{
 			if (current->num == compare->num)
 				return (0);
@@ -97,14 +98,15 @@ int	parse_and_check(char **input, t_stack **a)
 	int	i;
 	int	aux;
 	int	error;
-	
+
 	aux = 0;
 	i = 0;
-	error = 1;
 	if (!check_numbers(input))
 		return (0);
-	while(input[i] && (error = ft_atoi_with_check(input[i], &aux)))
+	error = ft_atoi_with_check(input[i], &aux);
+	while (input[i] && error)
 	{
+		error = ft_atoi_with_check(input[i], &aux);
 		ft_lstadd_back(a, ft_lstnew(aux));
 		i++;
 	}
@@ -113,6 +115,5 @@ int	parse_and_check(char **input, t_stack **a)
 		free_all(*a, NULL);
 		return (0);
 	}
-
 	return (1);
 }
