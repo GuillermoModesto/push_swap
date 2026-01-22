@@ -79,5 +79,9 @@ int	main(int argc, char **argv)
 	ft_printf(" -> rr:\n");
 	rr(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
-		
+	
+	// rra (shift down all elements of stack a by 1)
+	ft_printf(" -> rra:\n");
+	rra(&stack_a);
+	print_stacks(stack_a, stack_b);
 }
