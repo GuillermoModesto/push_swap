@@ -64,5 +64,20 @@ int	main(int argc, char **argv)
 	ft_printf(" -> pb:\n");
 	pb(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
+	
+	// ra (shift up all elements of stack a by 1)
+	ft_printf(" -> ra:\n");
+	ra(&stack_a);
+	print_stacks(stack_a, stack_b);
+	
+	// rb (shift up all elements of stack b by 1)
+	ft_printf(" -> rb:\n");
+	rb(&stack_b);
+	print_stacks(stack_a, stack_b);
+	
+	// rr (do ra and rb)
+	ft_printf(" -> rr:\n");
+	rr(&stack_a, &stack_b);
+	print_stacks(stack_a, stack_b);
 		
 }

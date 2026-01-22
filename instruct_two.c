@@ -10,18 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
-// (shift up all elements of stack a by 1)
+
 void	ra(t_stack **a)
 {
+	t_stack	*first;
+	t_stack	*last;
 	
+	first = *a;
+	last = ft_lstlast(*a);
+	*a = (*a)->next;
+	last->next = first;
+	first->next = NULL;
 }
-// (shift up all elements of stack b by 1)
+
 void	rb(t_stack **b)
 {
-
+	t_stack	*first;
+	t_stack	*last;
+	
+	first = *b;
+	last = ft_lstlast(*b);
+	*b = (*b)->next;
+	last->next = first;
+	first->next = NULL;
 }
-// (do sa and sb)
+
 void	rr(t_stack **a, t_stack **b)
 {
-
+	ra(a);
+	rb(b);
 }
