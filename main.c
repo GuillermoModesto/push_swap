@@ -32,7 +32,8 @@ int	main(int argc, char **argv)
 		display_error();
 		return (3);
 	}
-
+	sort_stack(&stack_a, &stack_b);
+/*
 	// for TESTING only
 	parse_and_check(ft_split(argv[1], ' '), &stack_b);
 	
@@ -85,4 +86,5 @@ int	main(int argc, char **argv)
 	ft_printf("\n -> rrr (do rra and rrb):\n");
 	rrr(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
+*/
 }

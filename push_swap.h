@@ -47,6 +47,8 @@ void	rra(t_stack **a, int from_rrr);
 void	rrb(t_stack **b, int from_rrr);
 void	rrr(t_stack **a, t_stack **b);
 
+void	sort_stacks(t_stack **a, t_stack **b);
+
 t_stack	*ft_lstnew(int num);
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lstsectolast(t_stack *lst);
