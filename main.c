@@ -32,56 +32,57 @@ int	main(int argc, char **argv)
 		display_error();
 		return (3);
 	}
+
 	// for testing only
 	parse_and_check(ft_split(argv[1], ' '), &stack_b);
 	
-	ft_printf(" -> Original:\n");
+	ft_printf("\n -> Original:\n");
 	print_stacks(stack_a, stack_b);
 	ft_printf("\n");
-	
+	/*
 	// sa sb (swap first two elements of a or b)
-	ft_printf(" -> sa:\n");
+	ft_printf("\n -> sa:\n");
 	sa(&stack_a);
 	print_stacks(stack_a, stack_b);
 	ft_printf("\n");
 	
-	ft_printf(" -> sb:\n");
+	ft_printf("\n -> sb:\n");
 	sb(&stack_b);
 	print_stacks(stack_a, stack_b);
 	ft_printf("\n");
 	
 	// ss (do sa and sb)
-	ft_printf(" -> ss:\n");
+	ft_printf("\n -> ss:\n");
 	ss(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
 	
 	// pa (take first of b and put it on top of a)
-	ft_printf(" -> pa:\n");
+	ft_printf("\n -> pa:\n");
 	pa(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
 	
 	// pb (take first of a and put it on top of b)
-	ft_printf(" -> pb:\n");
+	ft_printf("\n -> pb:\n");
 	pb(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
 	
 	// ra (shift up all elements of stack a by 1)
-	ft_printf(" -> ra:\n");
+	ft_printf("\n -> ra:\n");
 	ra(&stack_a);
 	print_stacks(stack_a, stack_b);
 	
 	// rb (shift up all elements of stack b by 1)
-	ft_printf(" -> rb:\n");
+	ft_printf("\n -> rb:\n");
 	rb(&stack_b);
 	print_stacks(stack_a, stack_b);
 	
 	// rr (do ra and rb)
-	ft_printf(" -> rr:\n");
+	ft_printf("\n -> rr:\n");
 	rr(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
-	
+	*/
 	// rra (shift down all elements of stack a by 1)
-	ft_printf(" -> rra:\n");
+	ft_printf("\n -> rra:\n");
 	rra(&stack_a);
 	print_stacks(stack_a, stack_b);
 }

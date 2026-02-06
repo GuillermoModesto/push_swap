@@ -23,6 +23,19 @@ t_stack	*ft_lstnew(int num)
 	return (new);
 }
 
+t_stack	*ft_lstsectolast(t_stack *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst -> next)
+	{
+		if (lst->next->next == NULL)
+			return (lst);
+		lst = lst -> next;
+	}
+	return (lst);
+}
+
 t_stack	*ft_lstlast(t_stack *lst)
 {
 	if (!lst)

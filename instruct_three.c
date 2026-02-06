@@ -14,13 +14,13 @@
 void	rra(t_stack **a)
 {
 	t_stack	*first;
+	t_stack *sec_to_last;
 	t_stack	*last;
 	
 	first = *a;
 	last = ft_lstlast(*a);
-	*a = (*a)->next;
-	last->next = first;
-	first->next = NULL;
+	sec_to_last = ft_lstsectolast(*a);
+	
 }
 /*
 void	rrb(t_stack **b)

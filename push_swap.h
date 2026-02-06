@@ -49,6 +49,7 @@ void	rrr(t_stack **a, t_stack **b);
 
 t_stack	*ft_lstnew(int num);
 t_stack	*ft_lstlast(t_stack *lst);
+t_stack	*ft_lstsectolast(t_stack *lst);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 
 #endif
