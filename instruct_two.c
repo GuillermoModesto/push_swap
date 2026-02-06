@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	ra(t_stack **a)
+void	ra(t_stack **a, int from_rr)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -23,9 +23,11 @@ void	ra(t_stack **a)
 	*a = (*a)->next;
 	last->next = first;
 	first->next = NULL;
+	if (!from_rr)
+		ft_printf("ra\n");
 }
 
-void	rb(t_stack **b)
+void	rb(t_stack **b, int from_rr)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -37,10 +39,13 @@ void	rb(t_stack **b)
 	*b = (*b)->next;
 	last->next = first;
 	first->next = NULL;
+	if (!from_rr)
+		ft_printf("rb\n");
 }
 
 void	rr(t_stack **a, t_stack **b)
 {
-	ra(a);
-	rb(b);
+	ra(a, 1);
+	rb(b, 1);
+	ft_printf("rr\n");
 }

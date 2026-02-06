@@ -35,16 +35,16 @@ void	display_error(void);
 int		parse_and_check(char **input, t_stack **a);
 void	free_all(t_stack *a, t_stack *b);
 
-void	sa(t_stack **a);
-void	sb(t_stack **b);
+void	sa(t_stack **a, int from_ss);
+void	sb(t_stack **b, int from_ss);
 void	ss(t_stack **a, t_stack **b);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
-void	ra(t_stack **a);
-void	rb(t_stack **b);
+void	ra(t_stack **a, int from_rr);
+void	rb(t_stack **b, int from_rr);
 void	rr(t_stack **a, t_stack **b);
-void	rra(t_stack **a);
-void	rrb(t_stack **b);
+void	rra(t_stack **a, int from_rrr);
+void	rrb(t_stack **b, int from_rrr);
 void	rrr(t_stack **a, t_stack **b);
 
 t_stack	*ft_lstnew(int num);
