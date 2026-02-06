@@ -27,7 +27,7 @@ t_stack	*ft_lstsectolast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
-	while (lst -> next)
+	while (lst->next)
 	{
 		if (lst->next->next == NULL)
 			return (lst);

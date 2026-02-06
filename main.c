@@ -39,50 +39,50 @@ int	main(int argc, char **argv)
 	ft_printf("\n -> Original:\n");
 	print_stacks(stack_a, stack_b);
 	ft_printf("\n");
-	/*
-	// sa sb (swap first two elements of a or b)
-	ft_printf("\n -> sa:\n");
+	
+	ft_printf("\n -> sa (swap first two elements of a):\n");
 	sa(&stack_a);
 	print_stacks(stack_a, stack_b);
 	ft_printf("\n");
 	
-	ft_printf("\n -> sb:\n");
+	ft_printf("\n -> sb (swap first two elements of b):\n");
 	sb(&stack_b);
 	print_stacks(stack_a, stack_b);
 	ft_printf("\n");
 	
-	// ss (do sa and sb)
-	ft_printf("\n -> ss:\n");
+	ft_printf("\n -> ss (do sa and sb):\n");
 	ss(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
 	
-	// pa (take first of b and put it on top of a)
-	ft_printf("\n -> pa:\n");
+	ft_printf("\n -> pa (take first of b and put it on top of a):\n");
 	pa(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
-	
-	// pb (take first of a and put it on top of b)
-	ft_printf("\n -> pb:\n");
+
+	ft_printf("\n -> pb (take first of a and put it on top of b):\n");
 	pb(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
 	
-	// ra (shift up all elements of stack a by 1)
-	ft_printf("\n -> ra:\n");
+	ft_printf("\n -> ra (shift up all elements of stack a by 1):\n");
 	ra(&stack_a);
 	print_stacks(stack_a, stack_b);
 	
-	// rb (shift up all elements of stack b by 1)
-	ft_printf("\n -> rb:\n");
+	ft_printf("\n -> rb (shift up all elements of stack b by 1):\n");
 	rb(&stack_b);
 	print_stacks(stack_a, stack_b);
 	
-	// rr (do ra and rb)
-	ft_printf("\n -> rr:\n");
+	ft_printf("\n -> rr (do ra and rb):\n");
 	rr(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
-	*/
-	// rra (shift down all elements of stack a by 1)
-	ft_printf("\n -> rra:\n");
+	
+	ft_printf("\n -> rra (shift down all elements of stack a by 1):\n");
 	rra(&stack_a);
+	print_stacks(stack_a, stack_b);
+	
+	ft_printf("\n -> rrb (shift down all elements of stack a by b):\n");
+	rrb(&stack_b);
+	print_stacks(stack_a, stack_b);
+	
+	ft_printf("\n -> rrr (do rra and rrb):\n");
+	rrr(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
 }
