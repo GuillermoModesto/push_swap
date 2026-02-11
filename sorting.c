@@ -13,7 +13,82 @@
 
 void	sort_stacks(t_stack **a, t_stack **b)
 {
+	int	size;
 	
+	size = ft_lstsize(*a);
+	(void)b;
+	if (size == 0 || size == 1)
+		return ;
+	else if (size == 2)
+		sort_two(a);
+	else if (size == 3)
+		sort_three(a);
+	else if (size == 4)
+		sort_four(a, b);
+	/*else if (size == 5)
+		sort_five(a, b);
+	else if (size > 5 && size <= 100)
+		chunk_sort(a, b);
+	else
+		radix_sort(a, b);*/
+		
 }
 
-// manualmente sorting 2, 3, 4 y 5; de 100 a 500 chunk-based, mas radix
+void	sort_two(t_stack **a)
+{
+	if ((*a)->num > (*a)->next->num)
+		sa(a, 0);
+}
+
+void	sort_three(t_stack **a)
+{
+	int	x;
+	int	y;
+	int	z;
+	
+	x = (*a)->num;
+	y = (*a)->next->num;
+	z = (*a)->next->next->num;
+	if ((x > y) && (y < z) && (x < z))
+		sa(a, 0);
+	else if ((x > y) && (y > z))
+	{
+		sa(a, 0);
+		rra(a, 0);
+	}
+	else if ((x > y) && (y < z) && (x > z))
+		ra(a, 0);
+	else if ((x < y) && (y > z) && (x < z))
+	{
+		sa(a, 0);
+		ra(a, 0);
+	}
+	else if ((x < y) && (y > z) && (x > z))
+		rra(a, 0);
+}
+
+void	sort_four(t_stack **a, t_stack **b)
+{
+	int	smallest;
+	
+	smallest = get_smallest(*a);
+
+	if ((*a)->next->num == smallest)
+		ra(a, 0);
+	else if ((*a)->next->next->num == smallest)
+	{
+		ra(a, 0);
+		ra(a, 0);
+	}
+	else if ((*a)->next->next->next->num == smallest)
+		rra(a, 0);
+	pb(a, b);
+	sort_three(a);
+	pa(a, b);
+}
+/*
+void	sort_five(t_stack **a, t_stack **b)
+{
+	
+}
+*/

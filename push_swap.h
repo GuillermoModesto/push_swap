@@ -48,10 +48,17 @@ void	rrb(t_stack **b, int from_rrr);
 void	rrr(t_stack **a, t_stack **b);
 
 void	sort_stacks(t_stack **a, t_stack **b);
+void	sort_two(t_stack **a);
+void	sort_three(t_stack **a);
+void	sort_four(t_stack **a, t_stack **b);
+/*void	sort_five(t_stack **a, t_stack **b);*/
+
+int	get_smallest(t_stack *s);
 
 t_stack	*ft_lstnew(int num);
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lstsectolast(t_stack *lst);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
+int	ft_lstsize(t_stack *stack);
 
 #endif

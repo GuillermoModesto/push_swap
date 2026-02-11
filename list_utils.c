@@ -59,3 +59,16 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	ptr = ft_lstlast(*lst);
 	ptr->next = new;
 }
+
+int	ft_lstsize(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		stack = stack -> next;
+		i++;
+	}
+	return (i);
+}
