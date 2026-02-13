@@ -6,7 +6,7 @@
 /*   By: guantino <guantino@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 17:00:45 by guantino          #+#    #+#             */
-/*   Updated: 2026/01/21 17:52:37 by guantino         ###   ########.fr       */
+/*   Updated: 2026/02/13 14:29:47 by guantino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,16 @@ void	sort_stacks(t_stack **a, t_stack **b);
 void	sort_two(t_stack **a);
 void	sort_three(t_stack **a);
 void	sort_four(t_stack **a, t_stack **b);
-/*void	sort_five(t_stack **a, t_stack **b);*/
+void	sort_five(t_stack **a, t_stack **b);
 
-int	get_smallest(t_stack *s);
+int		get_smallest(t_stack *s);
+void	pop_smallest_four(t_stack **a, t_stack **b, int smallest);
+void	pop_smallest_five(t_stack **a, t_stack **b, int smallest);
 
 t_stack	*ft_lstnew(int num);
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lstsectolast(t_stack *lst);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
-int	ft_lstsize(t_stack *stack);
+int		ft_lstsize(t_stack *stack);
 
 #endif

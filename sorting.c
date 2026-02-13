@@ -14,7 +14,7 @@
 void	sort_stacks(t_stack **a, t_stack **b)
 {
 	int	size;
-	
+
 	size = ft_lstsize(*a);
 	(void)b;
 	if (size == 0 || size == 1)
@@ -25,13 +25,12 @@ void	sort_stacks(t_stack **a, t_stack **b)
 		sort_three(a);
 	else if (size == 4)
 		sort_four(a, b);
-	/*else if (size == 5)
+	else if (size == 5)
 		sort_five(a, b);
-	else if (size > 5 && size <= 100)
+	/*else if (size > 5 && size <= 100)
 		chunk_sort(a, b);
 	else
 		radix_sort(a, b);*/
-		
 }
 
 void	sort_two(t_stack **a)
@@ -45,7 +44,7 @@ void	sort_three(t_stack **a)
 	int	x;
 	int	y;
 	int	z;
-	
+
 	x = (*a)->num;
 	y = (*a)->next->num;
 	z = (*a)->next->next->num;
@@ -70,25 +69,24 @@ void	sort_three(t_stack **a)
 void	sort_four(t_stack **a, t_stack **b)
 {
 	int	smallest;
-	
-	smallest = get_smallest(*a);
 
-	if ((*a)->next->num == smallest)
-		ra(a, 0);
-	else if ((*a)->next->next->num == smallest)
-	{
-		ra(a, 0);
-		ra(a, 0);
-	}
-	else if ((*a)->next->next->next->num == smallest)
-		rra(a, 0);
-	pb(a, b);
+	smallest = get_smallest(*a);
+	pop_smallest_four(a, b, smallest);
 	sort_three(a);
 	pa(a, b);
 }
-/*
+
 void	sort_five(t_stack **a, t_stack **b)
 {
-	
+	int	smallest;
+
+	smallest = get_smallest(*a);
+	pop_smallest_five(a, b, smallest);
+	print_stacks(*a, *b);
+	smallest = get_smallest(*a);
+	pop_smallest_four(a, b, smallest);
+	print_stacks(*a, *b);
+	sort_three(a);
+	pa(a, b);
+	pa(a, b);
 }
-*/
