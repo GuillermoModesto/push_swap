@@ -33,7 +33,6 @@ int	main(int argc, char **argv)
 		return (3);
 	}
 	sort_stacks(&stack_a, &stack_b);
-	print_stacks(stack_a, stack_b);
 /*
 	// for TESTING only
 	parse_and_check(ft_split(argv[1], ' '), &stack_b);

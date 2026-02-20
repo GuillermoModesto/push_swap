@@ -28,9 +28,9 @@ void	sort_stacks(t_stack **a, t_stack **b)
 	else if (size == 5)
 		sort_five(a, b);
 	/*else if (size > 5 && size <= 100)
-		chunk_sort(a, b);
+		chunk_sort(a, b);*/
 	else
-		radix_sort(a, b);*/
+		radix_sort(a, b);
 }
 
 void	sort_two(t_stack **a)
@@ -82,10 +82,8 @@ void	sort_five(t_stack **a, t_stack **b)
 
 	smallest = get_smallest(*a);
 	pop_smallest_five(a, b, smallest);
-	print_stacks(*a, *b);
 	smallest = get_smallest(*a);
 	pop_smallest_four(a, b, smallest);
-	print_stacks(*a, *b);
 	sort_three(a);
 	pa(a, b);
 	pa(a, b);

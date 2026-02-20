@@ -18,6 +18,7 @@
 typedef struct s_stack
 {
 	int				num;
+	int				index;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -52,6 +53,8 @@ void	sort_two(t_stack **a);
 void	sort_three(t_stack **a);
 void	sort_four(t_stack **a, t_stack **b);
 void	sort_five(t_stack **a, t_stack **b);
+void    radix_sort(t_stack **a, t_stack **b);
+void	get_index(t_stack *a);
 
 int		get_smallest(t_stack *s);
 void	pop_smallest_four(t_stack **a, t_stack **b, int smallest);
