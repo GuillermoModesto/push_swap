@@ -13,11 +13,28 @@
 
 void	radix_sort(t_stack **a, t_stack **b)
 {
-	(void)b;
+	int	n;
+	int	bits;
+	int	bit;
+	int	i;
+	
+	n = ft_lstsize(*a);
+	bits = max_bits(n);
+	bit = 0;
 	get_index(*a);
-	while (*a)
+	while (bit < bits)
 	{
-		ft_printf("%d\n", (*a)->index);
-		(*a) = (*a)->next;
+		i = 0;
+		while (i < n)
+		{
+			if ((((*a)->index >> bit) & 1) == 0)
+				pb(a, b);
+			else
+				ra(a, 0);
+			i++;
+		}
+		while (*b)
+			pa(a, b);
+		bit++;
 	}
 }	

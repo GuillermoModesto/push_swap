@@ -32,3 +32,15 @@ void	get_index(t_stack *a)
 		aux = aux->next;
 	}
 }
+
+int	max_bits(int n)
+{
+	int	bits;
+	int	max;
+	
+	bits = 0;
+	max = n - 1;
+	while ((max >> bits) != 0)
+		bits++;
+	return bits;
+}
