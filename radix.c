@@ -17,7 +17,7 @@ void	radix_sort(t_stack **a, t_stack **b)
 	int	bits;
 	int	bit;
 	int	i;
-	
+
 	n = ft_lstsize(*a);
 	bits = max_bits(n);
 	bit = 0;
@@ -37,4 +37,4 @@ void	radix_sort(t_stack **a, t_stack **b)
 			pa(a, b);
 		bit++;
 	}
-}	
+}

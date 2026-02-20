@@ -14,7 +14,7 @@
 int	get_smallest(t_stack *s)
 {
 	int	smallest;
-	
+
 	smallest = s->num;
 	while (s)
 	{

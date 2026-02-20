@@ -13,10 +13,10 @@
 
 void	get_index(t_stack *a)
 {
-	int	index;
+	int		index;
 	t_stack	*aux;
 	t_stack	*cmp;
-	
+
 	aux = a;
 	while (aux)
 	{
@@ -37,10 +37,10 @@ int	max_bits(int n)
 {
 	int	bits;
 	int	max;
-	
+
 	bits = 0;
 	max = n - 1;
 	while ((max >> bits) != 0)
 		bits++;
-	return bits;
+	return (bits);
 }

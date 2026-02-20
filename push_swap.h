@@ -53,9 +53,9 @@ void	sort_two(t_stack **a);
 void	sort_three(t_stack **a);
 void	sort_four(t_stack **a, t_stack **b);
 void	sort_five(t_stack **a, t_stack **b);
-void    radix_sort(t_stack **a, t_stack **b);
+void	radix_sort(t_stack **a, t_stack **b);
 void	get_index(t_stack *a);
-int	max_bits(int n);
+int		max_bits(int n);
 
 int		get_smallest(t_stack *s);
 void	pop_smallest_four(t_stack **a, t_stack **b, int smallest);

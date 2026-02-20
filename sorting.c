@@ -27,8 +27,6 @@ void	sort_stacks(t_stack **a, t_stack **b)
 		sort_four(a, b);
 	else if (size == 5)
 		sort_five(a, b);
-	/*else if (size > 5 && size <= 100)
-		chunk_sort(a, b);*/
 	else
 		radix_sort(a, b);
 }
