@@ -26,8 +26,10 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 	
+re:	fclean all
+	
 debug: CFLAGS += $(DFLAGS)
 debug: fclean $(NAME)
 
-.PHONY: all clean fclean debug
+.PHONY: all clean fclean debug re
 

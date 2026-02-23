@@ -26,11 +26,15 @@ int	main(int argc, char **argv)
 		display_error();
 		return (2);
 	}
-	i = 0;
-	if (!parse_and_check(ft_split(argv[1], ' '), &stack_a))
+	i = 1;
+	while (i < argc)
 	{
-		display_error();
-		return (3);
+		if (!parse_and_check(ft_split(argv[i], ' '), &stack_a))
+		{
+			display_error();
+			return (3);
+		}
+		i++;
 	}
 	sort_stacks(&stack_a, &stack_b);
 }
