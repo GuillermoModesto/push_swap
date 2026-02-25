@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
+#include <stdio.h>
 
 static size_t	count_words(const char *s, char c)
 {
@@ -50,7 +51,7 @@ static char	*substr_dumpy(const char *s, size_t start, size_t len)
 	return (p);
 }
 
-static void	*mega_free(char **out, size_t k)
+void	*mega_free(char **out, size_t k)
 {
 	while (k > 0)
 		free(out[--k]);
@@ -88,7 +89,7 @@ char	**ft_split(char const *s, char c)
 		{
 			out[k] = substr_dumpy(s, start, i - start);
 			if (!out[k])
-				return (mega_free(out, k));
+				return (mega_free(out, k + 1));
 			k++;
 		}
 	}
