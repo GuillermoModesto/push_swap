@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
-#include <stdbool.h>
-#include <stdio.h>
 
 static int	is_number(char *s)
 {
@@ -67,10 +65,10 @@ static int	check_numbers(char **input)
 	while (input[i])
 	{
 		if (!is_number(input[i]))
-			return (false);
+			return (0);
 		i++;
 	}
-	return (true);
+	return (1);
 }
 
 static int	check_duplicates(t_stack *a)
