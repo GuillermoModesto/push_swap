@@ -14,7 +14,7 @@
 int	array_len(char **a)
 {
 	int	i;
-	
+
 	i = 0;
 	while (a[i])
 		i++;
@@ -33,10 +33,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (1);
 	if (!argv[1][0])
-	{
-		display_error();
-		return (2);
-	}
+		return (display_error(), 2);
 	i = 1;
 	while (i < argc)
 	{
@@ -45,8 +42,7 @@ int	main(int argc, char **argv)
 		{
 			display_error();
 			mega_free(params, array_len(params));
-			free_all(stack_a, stack_b);
-			return (3);
+			return (free_all(stack_a, stack_b), 3);
 		}
 		mega_free(params, array_len(params));
 		i++;

@@ -66,11 +66,8 @@ static int	check_numbers(char **input)
 	i = 0;
 	while (input[i])
 	{
-	
-		if(!is_number(input[i])) {
-			printf("%s socorrito\n", input[i]);
-			return(false);
-		}
+		if (!is_number(input[i]))
+			return (false);
 		i++;
 	}
 	return (true);
@@ -116,7 +113,6 @@ int	parse_and_check(char **input, t_stack **a)
 	}
 	if (!error || !check_duplicates(*a))
 	{
-		free_all(*a, NULL);
 		return (0);
 	}
 	return (1);
