@@ -40,9 +40,8 @@ int	main(int argc, char **argv)
 		params = ft_split(argv[i], ' ');
 		if (!parse_and_check(params, &stack_a))
 		{
-			display_error();
 			mega_free(params, array_len(params));
-			return (free_all(stack_a, stack_b), 3);
+			return (free_all(stack_a, stack_b), display_error(), 3);
 		}
 		mega_free(params, array_len(params));
 		i++;
