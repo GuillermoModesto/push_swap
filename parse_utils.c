@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
+#include <stdbool.h>
+#include <stdio.h>
 
 static int	is_number(char *s)
 {
@@ -60,16 +62,18 @@ static int	ft_atoi_with_check(char *nptr, int *res)
 static int	check_numbers(char **input)
 {
 	int	i;
-	int	is_num;
 
 	i = 0;
-	is_num = is_number(input[i]);
-	while (input[i] && is_num)
+	while (input[i])
 	{
-		is_num = is_number(input[i]);
+	
+		if(!is_number(input[i])) {
+			printf("%s socorrito\n", input[i]);
+			return(false);
+		}
 		i++;
 	}
-	return (is_num);
+	return (true);
 }
 
 static int	check_duplicates(t_stack *a)

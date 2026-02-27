@@ -8,7 +8,7 @@ OBJS	= $(SRCS:.c=.o)
 
 CC		= cc
 RM		= rm -f
-CFLAGS	= -Wall -Wextra -Werror -I. -g -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -I.
 DFLAGS  = -g -O0
 NAME	= push_swap
 
@@ -18,7 +18,7 @@ NAME	= push_swap
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) -o $(NAME) -fsanitize=address
+	$(CC) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)

@@ -36,6 +36,7 @@ void	display_error(void);
 int		parse_and_check(char **input, t_stack **a);
 void	free_all(t_stack *a, t_stack *b);
 void	*mega_free(char **out, size_t k);
+int		array_len(char **a);
 
 void	sa(t_stack **a, int from_ss);
 void	sb(t_stack **b, int from_ss);

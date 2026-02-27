@@ -11,6 +11,16 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
+int	array_len(char **a)
+{
+	int	i;
+	
+	i = 0;
+	while (a[i])
+		i++;
+	return (i);
+}
+
 int	main(int argc, char **argv)
 {
 	int		i;
@@ -34,9 +44,11 @@ int	main(int argc, char **argv)
 		if (!parse_and_check(params, &stack_a))
 		{
 			display_error();
+			mega_free(params, array_len(params));
+			free_all(stack_a, stack_b);
 			return (3);
 		}
-		mega_free(params, i + 1);
+		mega_free(params, array_len(params));
 		i++;
 	}
 	sort_stacks(&stack_a, &stack_b);
