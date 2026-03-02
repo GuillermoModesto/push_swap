@@ -74,8 +74,8 @@ El programa muestra `Error` en stderr si:
 ./push_swap 2 1 3
 # Salida: sa
 
-# 'X' amount of random numbers
-ARG=$(shuf -i 1-100 -n 100 | tr '\n' ' ') ./push_swap $ARG | ./checker_linux $ARG
+# 'X' cantidad de números aleatorios
+ARG=$(seq 1 100 | shuf | tr '\n' ' '); ./push_swap $ARG | ./checker_linux $ARG
 
 # Entrada ya ordenada
 ./push_swap 1 2 3 4 5
