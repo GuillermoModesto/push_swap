@@ -32,11 +32,11 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (argc < 2)
 		return (1);
-	if (!argv[1][0])
-		return (display_error(), 2);
 	i = 1;
 	while (i < argc)
 	{
+		if (!argv[i][0])
+			return (display_error(), 2);
 		params = ft_split(argv[i], ' ');
 		if (!parse_and_check(params, &stack_a))
 		{

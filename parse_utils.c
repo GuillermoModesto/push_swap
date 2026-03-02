@@ -98,6 +98,8 @@ int	parse_and_check(char **input, t_stack **a)
 	int	aux;
 	int	error;
 
+	if (!input)
+		return (0);
 	aux = 0;
 	i = 0;
 	if (!check_numbers(input))
