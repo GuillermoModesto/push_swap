@@ -57,3 +57,14 @@ void	pop_smallest_five(t_stack **a, t_stack **b, int smallest)
 		rra(a, 0);
 	pb(a, b);
 }
+
+int	is_sorted(t_stack *a)
+{
+	while (a->next)
+	{
+		if (a->num > a->next->num)
+			return (0);
+		a = a->next;
+	}
+	return (1);
+}

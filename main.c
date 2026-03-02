@@ -24,12 +24,12 @@ int	array_len(char **a)
 int	main(int argc, char **argv)
 {
 	int		i;
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack	*a;
+	t_stack	*b;
 	char	**params;
 
-	stack_a = NULL;
-	stack_b = NULL;
+	a = NULL;
+	b = NULL;
 	if (argc < 2)
 		return (1);
 	i = 1;
@@ -38,14 +38,13 @@ int	main(int argc, char **argv)
 		if (!argv[i][0])
 			return (display_error(), 2);
 		params = ft_split(argv[i], ' ');
-		if (!parse_and_check(params, &stack_a))
-		{
-			mega_free(params, array_len(params));
-			return (free_all(stack_a, stack_b), display_error(), 3);
-		}
+		if (!parse_and_check(params, &a))
+			return (mega_free(params, array_len(params)),
+				free_all(a, b), display_error(), 3);
 		mega_free(params, array_len(params));
 		i++;
 	}
-	sort_stacks(&stack_a, &stack_b);
-	free_all(stack_a, stack_b);
+	if (!is_sorted(a))
+		sort_stacks(&a, &b);
+	return (free_all(a, b), 0);
 }
